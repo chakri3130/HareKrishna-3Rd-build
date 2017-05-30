@@ -1,0 +1,16 @@
+<ion-view title={{title}} id="page19" hide-back-button="true" cache-view="false">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff; margin-right:10px" ng-click="socialShare()"></button>
+        <button class="button button-clear icon ion-ios-cloud-download-outline" style="border-color:#fff" ng-click="downloadFile()"></button>
+    </ion-nav-buttons>
+    
+    <ion-content padding="false" scroll="true" overflow-scroll="true" class=" manual-remove-top-padding has-header">
+        <div style="position:absolute;bottom:30px; width:100%;text-align: center;" has-bouncing="false">
+            <label style="color:#336EFF;font-size:16px;padding: 0 10 0 10; margin-left=20%">{{content}}</label></div>
+        <iframe ng-src='{{videoUrl}}' target = _parent frameborder="0" scrolling="no" allowfullscreen style="width:100%; height: 100%;" allowfullscreen></iframe>
+        <!--<label style="position absolute; bottom:30px;color:#336EFF;font-size:16px;">FeaturedVideo : Paramhamsa Vani</label><br>-->
+        <div class="bar bar-subheader" style="padding:0px;height: 0px;" ng-show="progressbar" >
+            <progress id="progressbar" max="100" value="{{ downloadProgress }}" ng-show="progressbar" class="progress"> </progress>
+        </div>
+    </ion-content>
+</ion-view>

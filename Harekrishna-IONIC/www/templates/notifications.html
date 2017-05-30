@@ -1,0 +1,85 @@
+<style>
+    .item1-Notification p {
+        margin-top:0 !important;
+    }
+.item1 {
+    padding: 8px 0 0 72px  !important;
+}
+.item1-notificationImage {
+    min-height: 59px !important;
+}
+.item1-notificationImage img {
+    width:35px !important;
+    height:35px !important;
+    top:7px !important;
+}
+</style>
+
+<ion-view title="Notifications" hide-back-button="true" id="page28">
+    <ion-header-bar>
+        <div class="buttons">
+            <h3 class="title">
+                <center style=" font-family:Times New Roman;background-color:#F2D98E;"><b>Notifications</b></center>
+            </h3>
+            <button class="button button-icon ion-ios-close-empty round;" ng-click="closeModal()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content style="background-color:#fff;">
+        <!--    background-color:#F2D98E;-->
+        <h3 class="title" ng-show="notificationsArray == null">
+            <center style=" font-family:Times New Roman"><b>No new notifications</b></center>
+        </h3>
+        
+        <div class="list card" ng-repeat="notificationItem in notificationsArray | orderBy : '-Delivery_Time' " ng-show="notificationsArray != null" ng-click="Redirect(notificationItem.Type)">
+            <div class="item1 item1-notificationImage item item-avatar">
+                <img ng-src="{{notificationItem.Image}}">
+                    <p ng-class="{{activeCss}}">{{ notificationItem.Type }}</p>
+                    <p ng-class="{{activeCss}}">{{ notificationItem.Delivery_Time }}</p>
+                    </div>
+            <div class="item1 item1-Notification">
+                <p>
+                {{ notificationItem.Notification }}
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="item1 item1-notificationImage " ng-repeat="notif in notifications">
+                {{notif}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+<!--<ion-view title="Notifications" hide-back-button="true" id="page28">-->
+<!--    <ion-header-bar>-->
+<!--        <div class="buttons">-->
+<!--            <h3 class="title">-->
+<!--                <center style=" font-family:Times New Roman;background-color:#F2D98E;"><b>Notifications</b></center>-->
+<!--            </h3>-->
+<!--            <button class="button button-icon ion-ios-close-empty round;" ng-click="closeModal()"></button>-->
+<!--        </div>-->
+<!--    </ion-header-bar>-->
+<!--    <ion-content style="background-color:#fff;">-->
+<!--        <!--    background-color:#F2D98E;-->-->
+<!--        <h3 class="title" ng-show="notificationsArray == null">-->
+<!--            <center style=" font-family:Times New Roman"><b>No new notifications</b></center>-->
+<!--        </h3>-->
+<!--        -->
+<!--        <div class="list card" ng-repeat="notificationItem in notificationsArray | orderBy : '-Delivery_Time' " ng-show="notificationsArray != null" ng-click="Redirect(notificationItem.Type)">-->
+<!--            <div class="item item-avatar">-->
+<!--                <img ng-src="{{notificationItem.Image}}">-->
+<!--                    <p ng-class="{{activeCss}}">{{ notificationItem.Type }}</p>-->
+<!--                    <p ng-class="{{activeCss}}">{{ notificationItem.Delivery_Time }}</p>-->
+<!--                    </div>-->
+<!--            <div class="item item-body">-->
+<!--                <p>-->
+<!--                {{ notificationItem.Notification }}-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <div class="item item-avatar" ng-repeat="notif in notifications">-->
+<!--                {{notif}}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </ion-content>-->
+<!--</ion-view>-->

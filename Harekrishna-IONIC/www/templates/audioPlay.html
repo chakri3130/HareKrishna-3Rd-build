@@ -1,0 +1,94 @@
+<style>
+    .h1 { display: inline; }
+    .p { display: inline; }
+    .audio-play-fixed{
+        position: absolute;
+        z-index: 9999;
+        background: #F2D98E;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+.play-buttons{
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.button-Play-Pause{
+    margin: 0 40px;
+}
+
+.play-count{
+    width: 100%;
+    float: left;
+}
+
+.play-count div{
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+.play-count div:last-child{
+    text-align: right;
+}
+
+.play-lists{
+    margin: 28vh 0 0 0;
+    width: 100%;
+    float: left;
+}
+
+    </style>
+
+<ion-view title="Audio" hide-back-button="true" id="page23" style="background-color:#F2D98E;">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff; margin-right:10px" ng-click="socialShare()" ng-disabled="enable"></button>
+        <button class="button button-clear icon ion-android-download" style="border-color:#fff" ng-click="downloadFile()"
+            ng-disabled="enable"></button>
+        
+    </ion-nav-buttons>
+    <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="false">
+        
+        <div class="audio-play-fixed upage vertical-col left" id="mainpage">
+            <b ng-if="url">{{url}}</b>
+            <div class ="play-buttons">
+                <button id="button-prevoius" class="button button-clear  button-dark icon ion-skip-backward" ng-click="PlayPrevious()"></button>
+                <button id="button-Play-Pause" ng-model="PlayPause" class="button button-clear button-dark icon ion-play"
+                    ng-class="play? 'button button-clear button-dark icon ion-pause': 'button button-clear button-dark icon ion-play'"
+                    ng-click="PauseAudio()"></button>
+                <button id="button-next" class="button button-clear button-dark icon ion-skip-forward"  ng-click="PlayNext()"></button>
+                <br>
+                <br>
+                <input id="slider1" type="range" min="0" max='{{dur}}' step='1' name="range" ng-model="durt" style="height: 20px;width:280px;margin-top: 5px;padding-left: 10px;"/>
+            </div>
+            <div class="bar bar-subheader" style="padding:0px;height: 0px;" ng-show="progressbar" >
+                <progress id="progressbar" max="100" value="{{ downloadProgress }}" ng-show="progressbar" class="progress"> </progress>
+            </div>
+            <div class="play-count">
+                <div id="audio_position" class="col"></div>
+                <div style="float:right" class="col">{{durMax}}</div>
+            </div>
+            
+            <!--position : {{value}} -->
+        </div>
+        
+    </ion-content>
+    <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="true">
+        <div class="PublicationsMenu play-lists" >
+            <ul>
+                <li  ng-repeat="item in AudioListIs" class="item item-divider" ng-click="PlayAudio(item.url,item.sTitle,$index)">
+                    <label >
+                        <i class="icon folderMiddle ion ion-android-film ion-music-note"></i>
+                        <button class="button button-clear button-dark">{{item.sTitle}}</button>
+                        <i style="color:red" ng-if="IsNew(item.created_Date)"><sup><b>New</b></sup></i>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        
+        
+    </ion-content>
+</ion-view>

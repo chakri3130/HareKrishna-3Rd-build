@@ -1,0 +1,16 @@
+<ion-view title="Video" hide-back-button="true" id="page24" cache-view="false">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff; margin-right:10px" ng-click="socialShare()"></button>
+        <!--<button class="button button-clear icon ion-android-download" style="border-color:#fff" ng-click="downloadFile()"></button>-->
+    </ion-nav-buttons>
+    <ion-content padding="false" scroll="true" overflow-scroll="true" class=" manual-remove-top-padding has-header">
+        <!--<iframe frameborder="0" width="480" height="270"src=" http://www.youtube.com/embed/qPMIQobB3ZM?autoplay=1" allowfullscreen></iframe>
+         <iframe ng-src={{url}} style="width:100%; height: 100%;" frameborder="0"></iframe> -->
+        <youtube-video video-url="anotherGoodOne" player-width="'100%'" player-height="'100%'"
+            player-vars="playerVars" allowfullscreen></youtube-video>
+        <!--<span style="opacity:1; z-index:100; position:absolute;color:#FF0000">Download progress : {{downloadProgress}} %</span>-->
+        <div class="bar bar-subheader" style="padding:0px;height: 0px;" ng-show="progressbar" >
+            <progress id="progressbar" max="100" value="{{ downloadProgress }}" ng-show="progressbar" class="progress"> </progress>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+$energized: #FFB66F;
+$SIDEMENU_TOP: #F2D98E;
+$SIDEMENU_BOTTOM: #F2D98E;
+$SIDEMENU_TRANSPARENCY: rgba(0,0,0,0.4);
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.side-menu-item {
+	background: none;
+	color: black;
+	font-weight: 300;
+	border: 0px;
+	.item-content {
+		background: none;
+		&.activated {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+
+	}
+	&.active-page-highlight {
+		.item-content {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+
+	}
+}
+.side-menu-sub-item {
+	background: #F7EDCC;
+	color: black;
+	font-weight: 300;
+	border: 0px;
+	.item-content {
+		background: none;
+		&.activated {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+
+	}
+	&.active-page-highlight {
+		.item-content {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+
+	}
+}
+.side-menu-gradient {
+	background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+}
+

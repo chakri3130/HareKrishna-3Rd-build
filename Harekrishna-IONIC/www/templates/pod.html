@@ -1,0 +1,18 @@
+<ion-view title="Picture of the Day" hide-back-button="true" id="page14" style="background-color:#F2D98E;">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff; margin-right:10px" ng-click="socialShare()"></button>
+        <button class="button button-clear icon ion-android-download" style="border-color:#fff" ng-click="downloadFile()"></button>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="false" scroll="false">
+        <div class="img-land">
+            <img ng-src="{{pic}}" onerror="this.src='img/splash.jpg'" class="pod-image">
+                
+                </div>
+        <div class="bar bar-subheader" style="padding:0px;height: 0px;" ng-show="progressbar" >
+            <progress id="progressbar" max="100" value="{{ downloadProgress }}" ng-show="progressbar" class="progress"> </progress>
+        </div>
+    </ion-content>
+</ion-view>
+<script>
+    </script>
+

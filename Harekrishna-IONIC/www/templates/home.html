@@ -1,0 +1,76 @@
+<style>
+    ::-webkit-scrollbar {
+        width: 0px;
+        
+    }
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.round-button {
+    border-radius: 50%;
+}
+
+.mymodal {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+}
+</style>
+
+<ion-view title="Paramhamsa Vani" hide-back-button="true" id="page1">
+    <ion-content padding="true"
+        style="background: url('{{template_url}}') no-repeat center;background-size:cover;"
+        class="has-header" has-bouncing="false">
+        <!--<button class="button button-clear button-positive round-button  icon ion-ios-search" ng-click="SearchMedia()"
+         style="float:right;background-color:#FF9663;color:#fff;"></button>-->
+        <button class="button button-clear button-energized round-button icon ion-ios-bell"
+            style="float: right; background-color: #FF9663;color:#fff;margin-right: 5px;"
+            ng-click="showPopup()"></button>
+        <div class="homeDsgn"
+            ng-if="No_DarshanDisplay!='true'">
+            <div><label>Live Darsan</label></div>
+            <div><label>{{ LiveDarshan}} {{timeZone}}</label></div>
+        </div>
+        <div class="homeDsgn"
+            ng-if="No_DarshanDisplay!='false'">
+            <div><label>No Darsan Today</label></div>
+        </div>
+        <!--
+         <div style="float:right;position: absolute; bottom:70px;color:white;font-size:18px;" ng-if="No_DarshanDisplay">
+         <div><label>Live Darshan</label></div>
+         <div><label>{{ LiveDarshan}} {{timeZone}}</label> </div>
+         </div>
+         -->
+        
+    </ion-content>
+</ion-view>
+
+
+<!--<script id="notifications.html" type="text/ng-template">-->
+<!--&lt;!&ndash;-->
+<!--<div class="model mymodal" >-->
+<!--<ion-header-bar>-->
+<!--<div class="buttons">-->
+<!--<h3 class="title"><center style=" font-family:Times New Roman"><b>Media Notifications</b></center></h3>-->
+<!--<button class="button button-icon ion-ios-close-empty round;" ng-click="closeModal()"></button>-->
+<!--</div>-->
+<!--</ion-header-bar>-->
+<!--&ndash;&gt;-->
+<!--<ion-content style="background-color:#F2D98E;">-->
+<!--<h3 class="title">-->
+<!--<center style="font-family:Times New Roman,serif"><b>No new notifications</b></center>-->
+<!--</h3>-->
+<!--</ion-content>-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--</script>-->

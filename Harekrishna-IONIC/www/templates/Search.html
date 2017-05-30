@@ -1,0 +1,12 @@
+<ion-view title="Search" hide-back-button="true" id="page27" style="background-color:#F2D98E;">
+    <ion-content padding="false" class=" manual-remove-top-padding has-header">
+        <div>
+            <input type="text" placeholder="Search" ng-model="temp.search" autofocus="autofocus" class="full-width"
+                style="height: 45px;font-size: 16px; padding-left: 10px; ">
+                <button ng-if="temp.search.length"
+                    class="button button-icon ion-android-close input-button" style="padding-right: 10px;"
+                    ng-click="clearSearch()">
+                </button>
+                </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+<style>
+    .bacgrd{
+        background: url('{{templateURL}}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-top: 20px;
+    }
+</style>
+
+<ion-view title="Divine Saying" hide-back-button="true" id="page11" >
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff" ng-click="socialShare()"></button>
+    </ion-nav-buttons>
+    <ion-content padding="false" class="manual-remove-top-padding has-header" scroll="false" style="background-image: url('{{templateURL}}');background-repeat: no-repeat; background-size: 100% 100%;">
+        <!--<div>
+         <img src="img/wk157VZaQDyY03TMSuOj_topdivinesaying.png" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+         </div> -->
+        
+        <div style="margin-top: 55%;">
+            <div class="button-bar">
+                <a class="button button-energized" ng-click="clicked(1); langChan()" ng-class="{'active': var == 1}">English</a>
+                <a class="button button-energized" ng-click="clicked(2); langChan()" ng-class="{'active': var == 2}">Hindi</a>
+            </div>
+            <div ng-show="value" style="padding: 3%;font-family: verdana; font-size:16px;">
+                <p>{{sodEng}}</p>
+            </div>
+            <div ng-hide="value" style="padding: 3%;font-family: verdana; font-size:16px;">
+                <p>{{sodHin}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+.listDataStyle{
+	font-family: inherit;
+	font-size: 12px;
+	padding: 0px;
+}
+
+.pull-right{
+	padding-top: 10px;
+	padding-right: 10px;
+	float: right;
+}
+
+.No-Padding{
+	padding: -8px;
+}

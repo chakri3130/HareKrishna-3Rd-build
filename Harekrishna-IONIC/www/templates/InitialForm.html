@@ -1,0 +1,76 @@
+<style>
+    .ng-invalid {
+        border-width: 2px;
+        border-color: red;
+    }
+</style>
+
+<ion-view title="One Time Registration" hide-back-button="true" id="page26" style="background-color:#F2D98E;">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-close-circled" style="border-color:#fff"
+            ng-click="closeModal()"></button>
+    </ion-nav-buttons>
+    <ion-content style="background-color:white;" has-bouncing="false">
+        <form id='form1' name="form1" ng-submit="temp.submit(form1.$valid)" novalidate
+            style="padding:0 5px; box-sizing:border-box;">
+            <div class="list">
+                <label class="item item-input item-stacked-label" id="namelbl">
+                    <span class="input-label">Name <sup style="color:red;"><b>*</b></sup> :</span>
+                    <input type="text" ng-model="temp.Name" id="temp.Name" name="Name" required maxlength="100" minlength="5"
+                        placeholder="Enter Name">
+                        </label>
+                
+                <label class="item item-input item-stacked-label" id="namelbl">
+                    <span class="input-label"> Email <sup style="color:red;"><b>*</b></sup> :</span>
+                    <input type="email" ng-model="temp.Email" name="email" required maxlength="100"
+                        minlength="5" placeholder="Enter Email">
+                        </label>
+                
+                
+                <label class="item item-input item-stacked-label" id="locationlbl">
+                    <span class="input-label">Location :</span>
+                    <input type="text" ng-model="temp.Location" id="location" name='location' maxlength="50"
+                        placeholder="Enter Location">
+                        </label>
+                
+                <label class="item item-input item-select" id="namelbl">
+                    <span class="input-label">Country <sup style="color:red;"><b>*</b></sup> :</span>
+                    <select id="countryDd" name="country" ng-model="temp.Country" title="Category Type" required>
+                        <option value="India" selected>India</option>
+                        <option value="US">USA</option>
+                        <option value="China">China</option>
+                        <option value="France">France</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Singapoor">Singapoor</option>
+                        <option value="Ukriane">Ukriane</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="others">others</option>
+                    </select><br>
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label"><b>Message to Srila Gurudeva</b></span>
+                    <textarea ng-model="temp.MessageFromSirilaGuruDev" maxlength="1000" name="msggSir"
+                        placeholder="Enter Message"></textarea>
+                </label>
+                
+                <label class="item item-input item-stacked-label"
+                    ng-if="form1.Name.$error.required || form1.email.$error.required || form1.country.$error.required || form1.Name.$error.minlength || form1.email.$invalid && !form1.email.$pristine">
+                    <p ng-if="form1.Name.$error.required || form1.email.$error.required   || form1.country.$error.required"
+                    style="color:red;">* Required</p>
+                    
+                    <p ng-if="form1.Name.$error.minlength" style="color:red;"> Username must be longer than 5 characters </p>
+                    
+                    <p ng-show="form1.email.$invalid && !form1.email.$pristine" style="color:red;">Email should be abc@domain.xyz
+                    format</p>
+                </label>
+                <button class="button button-positive button-large button-block" type="submit" value="submit"
+                    ng-disabled="form1.$invalid" ng-click="submitUserDetails()">Submit
+                </button>
+                
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

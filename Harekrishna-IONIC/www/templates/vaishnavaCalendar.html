@@ -1,0 +1,25 @@
+
+<style>
+    .calender-scroll .event-detail-container .scrollable{
+        height: inherit !important;
+    }
+</style>
+<ion-view view-title={{viewTitle}} hide-back-button="true" id="page6">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff; margin-right:10px" ng-click="socialShare()"></button>
+        <button class="button button-clear icon ion-android-download" style="border-color:#fff" ng-click="downloadFile()"></button>
+    </ion-nav-buttons>
+    <ion-content padding="true" class=" manual-remove-top-padding has-header" has-bouncing="false">
+        <div class="calender-scroll">
+            <script src="../dist/js/calendar-tpls.js"></script><div>
+                <calendar ng-model="calendar.currentDate"  title-changed="onViewTitleChanged(title)" calendar-mode="calendar.mode" time-selected="onTimeSelected(selectedTime, events)" event-source="calendar.eventSource">
+                </calendar>
+                
+            </div>
+            <div class="bar bar-subheader" style="padding:0px;height: 0px;" ng-show="progressbar" >
+                <progress id="progressbar" max="100" value="{{ downloadProgress }}" ng-show="progressbar" class="progress"> </progress>
+            </div>
+            <div class="CalenderISTDisplay"><b>All events as per Indian Standard Time +5.30 GMT</b></div>
+        </div>
+    </ion-content>
+</ion-view>

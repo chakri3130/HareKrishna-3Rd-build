@@ -1,0 +1,62 @@
+<style>
+    .NoPadding{
+        padding:-8px;
+        margin: -4px;
+    }
+.NoMargin{
+    margin : -7px;}
+#Publications-button-bar{z-index: 9999; width: 100%; float: left; position:fixed; background-color:#F2D98E;}
+.scroll-tabs3{margin: 55px 0 0 0;}
+
+    </style>
+
+<ion-view title="Publications" hide-back-button="true" id="page10"  style="background-color:#F2D98E;">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-share-alt" style="border-color:#fff; margin-right:10px" ng-click="socialShare()" ng-disabled="disable?true:false"></button>
+        <button class="button button-clear icon ion-ios-cloud-download-outline" style="border-color:#fff" ng-click="downloadFile()" ng-disabled="disable?true:false"></button>
+    </ion-nav-buttons>
+    
+    <ion-content padding="flase" class=" manual-remove-top-padding has-header NoPadding" scroll="false" has-bouncing="false">
+        
+        
+        <div id="Publications-button-bar" class="button-bar NoPadding" >
+            <button id="Publications-button-eng" style="color:#000000;" class="button button-energized button-block"
+                ng-click="PopulatePublications('English')" ng-class="{'active': language == 'English'}"><b>English</b></button>
+            
+            <button id="Publications-button-hindi" style="color:#000000;" class="button button-energized  button-block"
+                ng-click="PopulatePublications('Hindi')" ng-class="{'active': language == 'Hindi'}"><b>Hindi</b></button>
+            
+            <button id="Publications-button-bengali" style="color:#000000;" class="button button-energized  button-block" ng-click="PopulatePublications('Bengali')" ng-class="{'active': language == 'Bengali'}"><b>Bengali</b></button>
+        </div>
+    </ion-content>
+    <ion-content padding="flase" class=" manual-remove-top-padding has-header NoPadding" scroll="true">
+        <div class="listDataStyle NoMargin scroll-tabs3" ng-repeat="item in Publications" >
+            <div class="item item-divider NoPadding" ng-repeat="subItem in item">
+                <label ng-click ="openModal(subItem.Publication_URL, subItem.Publication_Name)">
+                    <i class="ion folderMiddle icon videoIcon padding-icon ion-ios-book"></i>
+                    <button class="button button-clear button-dark" style=" word-break: break-all;">{{subItem.Publication_Name}}</button>
+                    <i style="color:red" ng-if="IsNew(subItem.Created_Date)"><sup><b>New</b></sup></i>
+                </label>
+            </div>
+        </div>
+        <!--<span style="opacity:1; z-index:100; position:absolute;color:#FF0000">Download progress : {{downloadProgress}} %</span>-->
+        <div class="bar bar-subheader" style="padding:0px;height: 0px;" ng-show="progressbar" >
+            <progress id="progressbar" max="100" value="{{ downloadProgress }}" ng-show="progressbar" class="progress"> </progress>
+        </div>
+        
+    </ion-content>
+</ion-view>
+
+<script id="viewPdf.html" type="text/ng-template">
+    <div class="model">
+    <ion-header-bar>
+    <div class="buttons">
+    <h1 class="title">{{pdfName}}</h1>
+    <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
+    </div>
+    </ion-header-bar>
+    <ion-content>
+    <iframe ng-src="{{pdfUrl}}" style="width:100%; height: 1100px;"></iframe>
+    </ion-content>
+    </div>
+    </script>

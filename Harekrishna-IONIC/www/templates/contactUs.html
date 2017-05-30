@@ -1,0 +1,15 @@
+<ion-view title="Contact Us" hide-back-button="true" id="page5">
+    <ion-content padding="false" class=" manual-remove-top-padding has-header">
+        <div style="width: 300px; height: 59px;"></div>
+        <div id="contactUs-markdown2" style="color:#000000;text-align:center;font-size:16px">
+            <p style="text-align: center;padding: 0 20 0 20;"><b ng-repeat=" Address in AddressArray">{{Address}}<span ng-hide="$last">,</span><br></b></p>
+            
+            <p><b>Ph: {{Phone_Number}}</b></p>
+        </div>
+        <a href=""  ng-click="CallNow()" class="button button-positive  button-block padding-button" data-rel="external"><b>Call Now</b></a>
+        <div class="spacer" style="width: 300px; height: 46px;"></div>
+        <a href=""  ng-click="Email_Us()" class="button button-stable  button-block padding-button" data-rel="external"><b>Feedback</b></a>
+        <a href="" ng-click="openWsite()" id="contactUs-button4" class="button button-stable  button-block padding-button"><b>Visit our Website</b></a>
+        <a href="" ng-click="showBranches()" id="contactUs-button5" class="button button-stable  button-block padding-button"><b>Our Branches</b></a>
+    </ion-content>
+</ion-view>

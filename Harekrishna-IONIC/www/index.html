@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+<head>
+  <title></title>
+  <!--<meta http-equiv="Content-Security-Policy" 
+         content="default-src *; 
+                  style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
+                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';">-->
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+  <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+  <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+  <!--<style>
+    /* following three (cascaded) are equivalent to above three meta viewport statements */
+    /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+    /* see http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style> -->
+
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+  <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+  <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
+  <!-- Recommended location for your JavaScript libraries -->
+  <!-- These library references (below) are just examples to give you the general idea... -->
+  <!-- <script src="lib/mc/hammer.js"></script> -->
+  <!-- <script src="lib/ft/fastclick.js"></script> -->
+
+  <!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+
+  <script src="cordova.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+  <script src="lib/ng-cordova.min.js"></script>
+  <script src="lib/ion-audio.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/ionic.app.css">
+
+  <!--<link rel="stylesheet" type="text/css" href="css/audioPlayLast_main.less.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/mediaStyles.css">
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/ng-responsive-calendar/dist/css/calendar.css"/>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/ng-responsive-calendar/dist/js/calendar-tpls.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="bower_components/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+
+
+  <!-- <script src="js/app.js"></script>           for your event code, see README and file comments for details -->
+  <!-- <script src="js/init-app.js"></script> -->
+  <!-- for your init code, see README and file comments for details -->
+  <!--<script src="xdk/init-dev.js"></script>-->
+  <!-- normalizes device and document ready events, see file for details -->
+
+  <style type="text/css">
+    .platform-ios .manual-ios-statusbar-padding {
+      padding-top: 20px;
+    }
+
+    .manual-remove-top-padding {
+      padding-top: 0px;
+    }
+
+    .manual-remove-top-padding .scroll {
+      padding-top: 0px !important;
+    }
+
+    ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
+    ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+      border-radius: 0px;
+      border-left: 0px;
+      border-right: 0px;
+    }
+  </style>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/Logger.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controllers/MenuCtrl.js"></script>
+  <script src="js/controllers/HomeCtrl.js"></script>
+  <script src="js/controllers/LiveStreamingCtrl.js"></script>
+  <script src="js/controllers/MahamantraJapaCtrl.js"></script>
+  <script src="js/controllers/ContactUsCtrl.js"></script>
+  <script src="js/controllers/VaishnavaCalendarCtrl.js"></script>
+  <script src="js/controllers/BlogCtrl.js"></script>
+  <script src="js/controllers/MediaCtrl.js"></script>
+  <script src="js/controllers/VideoCtrl.js"></script>
+  <script src="js/controllers/PublicationsCtrl.js"></script>
+  <script src="js/controllers/DivineSayingCtrl.js"></script>
+  <script src="js/controllers/AudioCtrl.js"></script>
+  <script src="js/controllers/VideoRedirectCtrl.js"></script>
+  <script src="js/controllers/AudioPlayCtrl.js"></script>
+  <script src="js/controllers/PodCtrl.js"></script>
+  <script src="js/controllers/AODCtrl.js"></script>
+  <script src="js/controllers/NotificationsCtrl.js"></script>
+  <script src="js/controllers/initialFormCtrl.js"></script>
+  
+
+  <!-- services -->
+  <script src="js/services/CalDataService.js"></script>
+  <script src="js/services/CalService.js"></script>
+  <script src="js/services/LivePostDataService.js"></script>
+  <script src="js/services/PublicationsService.js"></script>
+  <script src="js/services/VideosService.js"></script>
+  <script src="js/services/AudioService.js"></script>
+  <script src="js/services/AudioPlayService.js"></script>
+  <script src="js/services/LocbDataService.js"></script>
+  <script src="js/services/SODService.js"></script>
+  <script src="js/services/AODService.js"></script>
+  <script src="js/services/DarshanTimingService.js"></script>
+  <script src="js/services/PODService.js"></script>
+  <script src="js/services/NotificationsService.js"></script>
+
+</head>
+
+
+<body ng-app="app" animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">
+<div>
+  <div>
+    <ion-nav-bar class="bar-energized">
+      <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+  </div>
+</div>
+</body>
+
+</html>

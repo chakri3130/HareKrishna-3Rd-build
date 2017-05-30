@@ -1,0 +1,47 @@
+<style>
+    .NoPadding{
+        padding:-8px;
+        margin: -4px;
+    }
+.NoMargin{
+    margin : -7px;
+}
+#Publications-But {z-index: 9999; width: 100%; float: left; position:fixed; background-color:#F2D98E;}
+.scroll-tabs3{margin: 55px 0 0 0;}
+    </style>
+<ion-view title="Audio" hide-back-button="true" id="page13" style="background-color:#F2D98E;">
+    <ion-content padding="false" has-bouncing="false"  scroll="false" class="manual-remove-top-padding audio-custome-c has-header">
+        <div id="Publications-But" class="button-bar NoPadding">
+            
+            <button id="but_English"  class="button button-energized button-block"
+                ng-click="PopulateAudio('English')" ng-class="{'active': language == 'English'}"><b> English</b></button>
+            
+            <button id="but_Hindi"  class="button button-energized button-block" ng-init="lang='Hindi'"
+                ng-click="PopulateAudio('Hindi')" ng-init="langHindi=true" ng-class="{'active': language == 'Hindi'}"><b>Hindi</b></button>
+            
+            <button id="Audio-button-Bengali" class="button button-energized  button-block" ng-click="PopulateAudio('Bengali')" ng-class="{'active': language == 'Bengali'}"><b>Bengali</b></button>
+        </div>
+    </ion-content>
+    
+    <ion-content padding="false" has-bouncing="false"  scroll="true" class=" manual-remove-top-padding audio-custome-c has-header" has-bouncing="false">
+        
+        
+        <div class="listDataStyle NoMargin scroll-tabs3">
+            <div style = "background-color:#F2D98E;padding: 0 0px 0 12px;" class="item item-divider" ng-repeat="item in Audio" ng-model="show_[$index]" ng-click="show_[$index] = !show_[$index]">
+                <label>
+                    <i class="ion icon folderMiddle ion-ios-folder"></i>
+                    <button class="button button-clear button-dark"><b>{{item.title}}</b></button>
+                    <i ng-class="show_[$index]? 'icon arrowMiddle icon-accessory ion-chevron-up pull-right' : 'icon arrowMiddle icon-accessory ion-chevron-down pull-right'"></i>
+                </label>
+                <div ng-show="show_[$index]" class="item item-divider NoMargin" >
+                    <div ng-repeat="subItem in item.list" style ="background-color:#F5F5DC;border-bottom:solid 1px #666">
+                        <label ng-click="Redirect(subItem.slist)">
+                            <i class="icon folderMiddle ion ion-android-film ion-ios-folder"></i>
+                            <button class="button button-clear button-dark">{{subItem.category}}</button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

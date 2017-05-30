@@ -1,0 +1,52 @@
+<style>
+    .pull-right{
+        padding-top: 10px;
+        padding-right: 10px;
+        float: right;
+    }
+.NoPadding{
+    padding:-8px;
+    margin: -4px;
+}
+.NoMargin{
+    margin : -7px;
+}
+#Video-button-bar2{z-index: 9999; width: 100%; float: left; position:fixed; background-color:#F2D98E;}
+.scroll-tabs3{margin: 55px 0 0 0;}
+
+    </style>
+
+<ion-view title="Video" hide-back-button="true" id="page9"  style="background-color:#F2D98E;" cache-view="false">
+    <ion-content padding="flase" class=" manual-remove-top-padding has-header NoPadding" scroll="false">
+        
+        <div id="Video-button-bar2" class="button-bar" class="button-bar NoPadding">
+            
+            <button id="Video-button-eng" style="color:#000000;" class="button button-energized  button-block"
+                ng-click="PopulateVideos('English')" ng-class="{'active': language == 'English'}"><b>English</b></button>
+            
+            <button id="Video-button-hindi" style="color:#000000;" class="button button-energized  button-block"
+                ng-click="PopulateVideos('Hindi')" ng-class="{'active': language == 'Hindi'}"><b>Hindi</b></button>
+        </div>
+        
+    </ion-content>
+    <ion-content padding="flase" class="manual-remove-top-padding has-header NoPadding" scroll="true">
+        <div class="listDataStyle NoMargin scroll-tabs3">
+            <div style = "background-color:#F2D98E;" class="item item-divider" ng-repeat="item in Videos" ng-model="show_[$index]" ng-click="show_[$index] = !show_[$index]">
+                <label>
+                    <i class="ion icon folderMiddle ion-ios-folder"></i>
+                    <button class="button button-clear button-dark"><b>{{item.title}}</b></button>
+                    <i class="arrowMiddle" ng-class="show_[$index]? 'icon icon-accessory ion-chevron-up pull-right' : 'icon item-icon-right  icon-accessory ion-chevron-down pull-right'"></i>
+                </label>
+                <div ng-show="show_[$index]" class="item item-divider NoMargin" >
+                    <div ng-repeat="subItem in item.list" style ="background-color:#F5F5DC;border-bottom:solid 1px #666">
+                        <label >
+                            <i class="folderMiddle icon ion ion-android-film ion-ios-film"></i>
+                            <button class="button button-clearbutton-dark" style ="background-color:#F5F5DC;" ng-click="PalyVideo(subItem.url)">{{subItem.sTitle}}</button>
+                            <i style="color:red;" class="newTagCls" ng-if="IsNew(subItem.created_Date)"><sup><b>New</b></sup></i>
+                        </label>   
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

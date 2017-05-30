@@ -1,0 +1,81 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-energized">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21" enable-menu-with-back-views="true" width={{winWidth}}>
+        <ion-content padding="false" style="top:0px !important;" class="side-menu-left side-menu-gradient" has-bouncing="false">
+            <div>
+                <img src="img/backm.png" style="border: 0; position: absolute; top: 1%;left: 0;" menu-close="" ui-sref="menu.home">
+                <img src="img/SideMenuPic.png" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;margin-top: 5%;" menu-close="" ui-sref="menu.home">
+                    </div>
+            <ion-list id="menu-list4">
+                <ion-item class="item-icon-right balanced  side-menu-item" id="menu-list-item1" ng-click="dailyDarsandown()">
+                    <i class="side-menu-icon-dailydarshan"></i>Daily Darsan
+                    <i class="icon {{dailyDarsanIcon}}"></i>
+                </ion-item>
+            </ion-list>
+            <div id="menu-container2" ng-show="dailyDarsan">
+                <ion-list id="menu-list5">
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item10" ng-click="SelectedView();" menu-close="">Live Video
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                    <!--<ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item11" href="#" ng-click="OpenUrl(url_chat)"> Live Support
+                     <i class="icon ion-ios-arrow-right"></i>
+                     </ion-item> -->
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item12" ui-sref="menu.divineSaying" menu-close="">Divine Saying
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item13" ui-sref="menu.pod" menu-close="">Picture of the Day
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item26" ui-sref="menu.aod" menu-close="">Harikatha Nectar
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-list id="menu-list-5">
+                <ion-item class="item-icon-left item-icon-right dark  side-menu-item" id="menu-list-item2"  ng-click="mediaDown()">
+                    <i class="icon ion-images"></i>Media
+                    <i class="icon {{mediaIcon}}"></i>
+                </ion-item>
+            </ion-list>
+            <div id="menu-container1" ng-show="showMedia">
+                <ion-list id="menu-list2">
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item7" ui-sref="menu.audio" menu-close="">Audio
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item8" ui-sref="menu.video" menu-close="">Video
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                    <ion-item class="item-icon-right  side-menu-sub-item" id="menu-list-item9" ui-sref="menu.publications" menu-close="">Publications
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <ion-list id="menu-list1">
+                <ion-item class="item-icon-left item-icon-right  side-menu-item" id="menu-list-item3" ui-sref="menu.vaishnavaCalendar" menu-close="">
+                    <i class="icon ion-android-calendar"></i>Vaishnava Calendar
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  side-menu-item" id="menu-list-item4" ui-sref="menu.mahamantraJapa" menu-close="">
+                    <i class="side-menu-icon-mahamantra"></i>Mahamantra Japa
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                <ion-item class="item-icon-right  side-menu-item" id="menu-list-item5" ui-sref="menu.blog" menu-close="">
+                    <i class="side-menu-icon-blog"></i>Blog
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                <ion-item class="item-icon-left item-icon-right  side-menu-item" id="menu-list-item6" ui-sref="menu.contactUs" menu-close="">
+                    <i class="icon ion-chatbubble"></i>Contact Us
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
